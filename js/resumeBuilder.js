@@ -40,19 +40,19 @@ var projects = {
     "dates" : 2011,
     "description" : "Website written in support of the 1st Column fleet inside of Star Trek Online.",
     "images": ["images/1st_column.jpg","images/1st_column_2.jpg"],
-    "url" : "http://1stcolumn.org"
+    "url" : "https://1stcolumn.org"
   },{
     "title" : "Web Portfolio",
     "dates" : 2014,
     "description" : "Web page detailing projects finished within the Nanodegree courses.",
     "images": ["images/nano-p1-1.png","images/nano-p1-2.png"],
-    "url" : "http://sentry71.github.io/portfolio"
+    "url" : "https://sentry71.github.io/portfolio"
   },{
     "title" : "Arcade Clone",
     "dates" : 2014,
-    "description" : "Frogger-like game, using object oriented JavaScript and HTML5 canvas.<br>Featured in Udacity's list of <a class='inline' href='http://blog.udacity.com/2014/12/best-student-projects-2014.html'>'Best Student Projects of 2014'</a>.",
+    "description" : "Frogger-like game, using object oriented JavaScript and HTML5 canvas.<br>Featured in Udacity's list of <a class='inline' href='https://blog.udacity.com/2014/12/best-student-projects-2014.html'>'Best Student Projects of 2014'</a>.",
     "images": ["images/nano-p3-1.png","images/nano-p3-2.png"],
-    "url" : "http://sentry71.github.io/arcade"
+    "url" : "https://sentry71.github.io/arcade"
   }
   ],
   display : function() {
@@ -146,7 +146,7 @@ var education = {
     "degree" : "Bachelor of Science",
     "majors" : ["Electrical and Electronic Engineering"],
     "dates" : "2014 - 2020",
-    "url" : "http://www.unilag.edu.ng",
+    "url" : "https://www.unilag.edu.ng",
     "pin" : "yellow"
   }],
   "onlineCourses" : [{
