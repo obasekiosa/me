@@ -1,39 +1,30 @@
-body,
-div,
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding: 0;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Roboto', sans-serif;
 }
 
-.clear-fix {
-  overflow: auto;
-}
 
 .education-entry,
 .work-entry,
 .project-entry {
-  padding: 0 5%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
+
 h1 {
+
   font-size: 40px;
-  color: #f5a623;
+  color: #F5A623;
   line-height: 48px;
   display: inline;
 }
 
 h2 {
-  font-weight: bold;
+  font-style: bold;
   font-size: 24px;
+  color: #075892;
   color: #999;
   line-height: 29px;
   padding: 10px;
@@ -42,30 +33,28 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #000000;
   line-height: 22px;
 }
 
 h4 {
-  font-weight: bold;
+  font-style: bold;
   font-size: 14px;
-  color: #4a4a4a;
+  color: #4A4A4A;
   line-height: 17px;
 }
 
-h2,
-h3,
-h4,
-h5 {
-  padding: 10px 5%;
-
+h2, h3, h4, h5 {
+  padding:10px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #999999;
   line-height: 16px;
   float: left;
 }
@@ -73,20 +62,20 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #999999;
   line-height: 16px;
   float: right;
-
+  margin-top: 0px;
 }
 
 p {
   font-size: 14px;
-  color: #333;
+  color: #333333;
   line-height: 21px;
 }
 
 a {
-  color: #1199c3;
+  color: #1199C3;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -95,45 +84,64 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #F3F3F3;
   line-height: 28px;
 }
 
-#skills-h3 {
-  color: #f5ae23;
+#skillsH3 {
+  color: #F5AE23;
+  display: none;
+  padding-bottom: 0;
+}
+
+#skills {
   display: none;
 }
 
+#onlineH3 {
+  color: #075892;
+  padding: 15px 0 0 0;
+}
+
+#work-toggle,
+#education-toggle,
+#project-toggle,
+#map-toggle{
+  float: right;
+}
+
 .orange {
-  background-color: #f5ae23;
+  background-color: #F5AE23;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #F5AE23;
 }
 
 .white-text {
   font-weight: bold;
-  color: #fff;
+  color: #FFFFFF;
 }
 
-.gray {
-  background-color: #f3f3f3;
+.light-orange {
+  background-color: #FFF4E5;
   padding-bottom: 10px;
-  clear: both;
+  clear:both;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
+.dark-blue {
+  background-color: #04416C;
 }
 
-/* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #04416C;
 }
 
 .flex-box {
   display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: space-around;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -141,19 +149,16 @@ a {
   padding: 10px;
 }
 
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 10px;
-}
-
 .center-content {
-  padding: 2.5% 5%;
+  padding: 5%;
 }
 
 ul {
   list-style-type: none;
+}
+
+.inline {
+  display: inline;
 }
 
 .biopic {
@@ -167,18 +172,34 @@ img {
   padding: 10px;
 }
 
+.pin {
+  padding: 0;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+/* Bar chart stuff */
+.chart div {
+  font: 10px sans-serif;
+  background-color: #4A4A4A;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  height: 12px;
+  color: white;
+  display: inline-block;
+}
+
 span {
   padding: 5px;
 }
 
-#lets-connect {
+#letsConnect {
   text-align: center;
 }
 
-/* Media queries to handle various device widths */
-
 @media only screen and (max-width: 1024px) {
-  #lets-connect {
+  #letsConnect {
     margin-top: 5%;
   }
 }
@@ -190,7 +211,7 @@ span {
 }
 
 @media only screen and (max-width: 750px) {
-  #lets-connect {
+  #letsConnect {
     margin-top: 10%;
   }
   .biopic {
@@ -199,12 +220,17 @@ span {
   .welcome-message {
     display: none;
   }
+  .flex-box {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
 #map {
   display: block;
   height: 100%;
-  margin: 0 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 #mapDiv {
@@ -214,7 +240,8 @@ span {
 }
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,
+  #skillsH3,
+  #skills,
   .biopic {
     display: block;
   }

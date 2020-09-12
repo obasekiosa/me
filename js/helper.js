@@ -1,107 +1,101 @@
-/*
+var HTMLheaderName = "<h1 id='name'>%data%</h1>";
+var HTMLheaderRole = "<span class='white-text'>%data%</span><hr/>";
 
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
+var HTMLcontactGeneric = "<li class='flex-item'><span class='orange-text'>%contact%</span><span class='white-text'>%data%</span></li>";
+var HTMLmobile = "<li class='flex-item'><span class='orange-text icon-phone' title='mobile'></span><span class='white-text'>%data%</span></li>";
+var HTMLemail = "<li class='flex-item'><span class='orange-text icon-mail' title='email'></span><span class='white-text'>%data%</span></li>";
+var HTMLgithub = "<a class='white-text' style='margin-top: 0px;' href='https://www.github.com/%data%'><li class='flex-item'><span class='orange-text icon-github' title='GitHub'></span><span class='white-text'>%data%</span></li></a>";
+var HTMLlinkedin = "<a class='white-text' style='margin-top: 0px;' href='https://www.linkedin.com/in/%data%'><li class='flex-item'><span class='orange-text icon-linkedin' title='LinkedIn'></span><span class='white-text'>%data%</span></li></a>";
+var HTMLblog = "<li class='flex-item'><span class='orange-text icon-blogger' title='blog'></span><span class='white-text'>%data%</span></li>";
+var HTMLlocation = "<li class='flex-item'><span class='orange-text icon-home' title='home'></span><span class='white-text'>%data%";
+var HTMLmapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin' onClick='location.href=\"#mapDiv\"'></span></li>";
 
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
+var HTMLbioPic = "<img src='%data%' class='biopic'>";
+var HTMLWelcomeMsg = "<span class='welcome-message'>%data%</span>";
 
-Cameron Pittman
-*/
+var HTMLskillsStart = "<h3 id='skillsH3'>Skills at a Glance:</h3><ul id='skills' class='flex-box'></ul>";
+var HTMLskills = "<li class='flex-item'><span class='white-text'>%data%</span></li>";
 
+var HTMLworkStart = "<div class='work-entry'></div>";
+var HTMLworkEmployer = "<a href='#'>%data%";
+var HTMLworkTitle = " - %data%</a>";
+var HTMLworkDates = "<div class='date-text'>%data%</div>";
+var HTMLworkLocation = "<div class='location-text'>%data%";
+var HTMLworkMapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin' onClick='location.href=\"#mapDiv\"'></div>";
+var HTMLworkDescription = "<p><br>%data%</p>";
 
-/*
-These are HTML strings. As part of the course, you'll be using JavaScript functions
-replace the %data% placeholder text you see in them.
-*/
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLprojectStart = "<div class='project-entry'></div>";
+var HTMLprojectTitle = "<a href='%url%' target='_blank'>%data%</a>";
+var HTMLprojectDates = "<div class='date-text'>%data%</div>";
+var HTMLprojectDescription = "<p><br>%data%</p>";
+var HTMLprojectImage = "<img src='%data%'>";
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLschoolStart = "<div class='education-entry'></div>";
+var HTMLschoolName = "<a href='%url%' target='_blank'>%data%";
+var HTMLschoolDegree = " -- %data%</a>";
+var HTMLschoolDates = "<div class='date-text'>%data%</div>";
+var HTMLschoolLocation = "<div class='location-text'>%data%";
+var HTMLschoolMapPin = "<img src='http://maps.google.com/mapfiles/ms/icons/%color%-dot.png' class='pin' onClick='location.href=\"#mapDiv\"'></div>";
+var HTMLschoolMajor = "<em><br>Major: %data%</em>"
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLonlineClasses = "<h3 id='onlineH3'>Online Classes</h3>";
+var HTMLonlineTitle = "<a href='#'>%data%";
+var HTMLonlineSchool = " - %data%</a>";
+var HTMLonlineDates = "<div class='date-text'>%data%</div>";
+var HTMLonlineURL = "<br><a href='#' target='_blank'>%data%</a>";
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var internationalizeButton = "<button>Internationalize</button>";
+var googleMap = "<div id='map'></div>";
 
-var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
-
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
-
-var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
-
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
-
-var internationalizeButton = '<button>Internationalize</button>';
-var googleMap = '<div id="map"></div>';
-
-
-/*
-The Internationalize Names challenge found in the lesson Flow Control from JavaScript Basics requires you to create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
-*/
-$(document).ready(function() {
-  $('button').click(function() {
-    var $name = $('#name');
-    var iName = inName($name.text()) || function(){};
-    $name.html(iName);
-  });
-});
-
-/*
-The next few lines about clicks are for the Collecting Click Locations quiz in the lesson Flow Control from JavaScript Basics.
-*/
-var clickLocations = [];
+// collecting click locations
+clickLocations = [];
 
 function logClicks(x,y) {
   clickLocations.push(
     {
-      x: x,
-      y: y
+      "x": x,
+      "y": y
     }
   );
-  console.log('x location: ' + x + '; y location: ' + y);
+  console.log("x location: " + x + "; y location: " + y);
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks (x,y);
 });
 
+// toggle functions to show/hide sections
+$(document).on('click', '#work-toggle', function() {
+  $(".work-entry").toggle();
+  $("#work-toggle").toggleClass('icon-arrow-up icon-arrow-down');
+});
 
+$(document).on('click', '#project-toggle', function() {
+  $(".project-entry").toggle();
+  $("#project-toggle").toggleClass('icon-arrow-up icon-arrow-down');
+});
 
-/*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
-https://developers.google.com/maps/documentation/javascript/reference
-*/
-var map;    // declares a global map variable
+$(document).on('click', '#education-toggle', function() {
+  $(".education-entry").toggle();
+  $("#education-toggle").toggleClass('icon-arrow-up icon-arrow-down');
+});
 
+$(document).on('click', '#map-toggle', function() {
+  $("#map").toggle();
+  if($("#map").is(":hidden")){
+    $("#mapDiv").height('0');
+  }else{
+    $("#mapDiv").height('400');
+  }
+  $("#map-toggle").toggleClass('icon-arrow-up icon-arrow-down');
+});
 
-/*
-Start here! initializeMap() is called when page is loaded.
-*/
+// Google map functions
+var map;
+
 function initializeMap() {
 
   var locations;
@@ -110,140 +104,83 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  /*
-  For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js.
-  */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
-
-  /*
-  locationFinder() returns an array of every location string from the JSONs
-  written for bio, education, and work.
-  */
   function locationFinder() {
-
-    // initializes an empty array
     var locations = [];
 
-    // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location);
+    var loc = bio.contacts.location;
+    var loc_txt = "Home";
+    var color = bio.contacts.pin;
+    locations.push([loc,loc_txt,color]);
 
-    // iterates through school locations and appends each location to
-    // the locations array. Note that forEach is used for array iteration
-    // as described in the Udacity FEND Style Guide:
-    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    education.schools.forEach(function(school){
-      locations.push(school.location);
-    });
+    for (var school in education.schools) {
+      var loc = education.schools[school].location;
+      var loc_txt = education.schools[school].name;
+      var color = education.schools[school].pin;
+      locations.push([loc,loc_txt,color]);
+    }
 
-    // iterates through work locations and appends each location to
-    // the locations array. Note that forEach is used for array iteration
-    // as described in the Udacity FEND Style Guide:
-    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    work.jobs.forEach(function(job){
-      locations.push(job.location);
-    });
+    for (var job in work.jobs) {
+      var loc = work.jobs[job].location;
+      var loc_txt = work.jobs[job].employer;
+      var color = work.jobs[job].pin;
+      locations.push([loc,loc_txt,color]);
+    }
 
     return locations;
   }
 
-  /*
-  createMapMarker(placeData) reads Google Places search results to create map pins.
-  placeData is the object returned from search results containing information
-  about a single location.
-  */
-  function createMapMarker(placeData) {
+  function createMapMarker(placeData, note, pinColor) {
+    var lat = placeData.geometry.location.lat();
+    var lon = placeData.geometry.location.lng();
+    var name = placeData.formatted_address;
+    var bounds = window.mapBounds;
 
-    // The next lines save location data from the search result object to local variables
-    var lat = placeData.geometry.location.lat();  // latitude from the place service
-    var lon = placeData.geometry.location.lng();  // longitude from the place service
-    var name = placeData.formatted_address;   // name of the place from the place service
-    var bounds = window.mapBounds;            // current boundaries of the map window
-
-    // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
-      title: name
+      title: name,
+      icon: "http://maps.google.com/mapfiles/ms/icons/" + pinColor + "-dot.png",
+      animation: google.maps.Animation.DROP
     });
 
-    // infoWindows are the little helper windows that open when you click
-    // or hover over a pin on a map. They usually contain more information
-    // about a location.
     var infoWindow = new google.maps.InfoWindow({
-      content: name
+      content: note
     });
 
-    // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      infoWindow.open(map, marker);
     });
 
-    // this is where the pin actually gets added to the map.
-    // bounds.extend() takes in a map location object
     bounds.extend(new google.maps.LatLng(lat, lon));
-    // fit the map to the new marker
     map.fitBounds(bounds);
-    // center the map
     map.setCenter(bounds.getCenter());
   }
 
-  /*
-  callback(results, status) makes sure the search returned results for a location.
-  If so, it creates a new map marker for that location.
-  */
-  function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      createMapMarker(results[0]);
-    }
-  }
-
-  /*
-  pinPoster(locations) takes in the array of locations created by locationFinder()
-  and fires off Google place searches for each location
-  */
   function pinPoster(locations) {
-
-    // creates a Google place search service object. PlacesService does the work of
-    // actually searching for location data.
     var service = new google.maps.places.PlacesService(map);
-
-    // Iterates through the array of locations, creates a search object for each location
-      locations.forEach(function(place){
-      // the search request object
-      var request = {
-        query: place
-      };
-
-      // Actually searches the Google Maps API for location data and runs the callback
-      // function with the search results after each search.
-      service.textSearch(request, callback);
+    var request = {
+      query: locations[0]
+    }
+    service.textSearch(request, function (results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        createMapMarker(results[0], locations[1], locations[2]);
+      }
     });
   }
 
-  // Sets the boundaries of the map based on pin locations
   window.mapBounds = new google.maps.LatLngBounds();
 
-  // locations is an array of location strings returned from locationFinder()
   locations = locationFinder();
 
-  // pinPoster(locations) creates pins on the map for each location in
-  // the locations array
-  pinPoster(locations);
+  for (index in locations){
+    pinPoster(locations[index]);
+  }
+};
 
-}
+window.addEventListener('load', initializeMap);
 
-/*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
-
-// Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
-
-// Vanilla JS way to listen for resizing of the window
-// and adjust map bounds
-//window.addEventListener('resize', function(e) {
-  //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+window.addEventListener('resize', function(e) {
+  map.fitBounds(mapBounds);
+});
