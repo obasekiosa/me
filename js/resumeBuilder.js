@@ -157,8 +157,8 @@ var education = {
   },{
     "title" : "Control of Mobile Robots",
     "school" : "Cousera",
-    "dates" : 2014,
-    "url" : "https://try.github.io"
+    "dates" : 2017,
+     "url": "https://www.coursera.org/learn/mobile-robot/"
   }],
   display : function() {
     $("#education").append(HTMLschoolStart);
