@@ -5,7 +5,7 @@ var work = {
     "location" : "Lagos, Nigeria",
     "pin" : "green",
     "dates" : "December 2019 - September 2020",
-    "description" : "Programmer web and android developer, specializing in full stack web development of tools for use by internal customer support teams."
+    "description" : "Programmer, web and android developer, specializing in full stack web development of tools for use by internal customer support teams."
   },{
     "employer": "Wireline Schlumberger",
     "title" : "Engineering Intern",
@@ -36,24 +36,31 @@ var work = {
 
 var projects = {
   "projects" : [{
-    "title" : "1st Column Website",
-    "dates" : 2011,
-    "description" : "Website written in support of the 1st Column fleet inside of Star Trek Online.",
+      "title": "Online Movie Database System",
+    "dates" : 2020,
+      "description": "A distributed movie database system built using ReactJS, MongoDB and Flask framework. <a class='inline' href='https://github.com/obasekiosa/mflix-movies'>REPO</a>.",
     "images": ["images/1st_column.jpg","images/1st_column_2.jpg"],
-    "url" : "https://1stcolumn.org"
+      "url": "https://mflix-movies.herokuapp.com/"
   },{
-    "title" : "Web Portfolio",
-    "dates" : 2014,
-    "description" : "Web page detailing projects finished within the Nanodegree courses.",
+          "title": "Quake Report",
+    "dates" : 2019,
+          "description": "A real-time earthquake notifier using Android native, retrofit networking library and the USGS API. <a class='inline' href='https://github.com/obasekiosa/QuakeReport'>REPO</a>.",
     "images": ["images/nano-p1-1.png","images/nano-p1-2.png"],
     "url" : "https://sentry71.github.io/portfolio"
   },{
-    "title" : "Arcade Clone",
+          "title": "File Similarity Checker",
     "dates" : 2014,
-    "description" : "Frogger-like game, using object oriented JavaScript and HTML5 canvas.<br>Featured in Udacity's list of <a class='inline' href='https://blog.udacity.com/2014/12/best-student-projects-2014.html'>'Best Student Projects of 2014'</a>.",
+          "description": "A Text file similarity checker using, Flask, bootstrap and the Natural language processing library (nltk). <a class='inline' href='https://github.com/obasekiosa/similarities'>REPO</a>.",
     "images": ["images/nano-p3-1.png","images/nano-p3-2.png"],
-    "url" : "https://sentry71.github.io/arcade"
-  }
+          "url": "https://similarities-deploy.herokuapp.com/"
+  },
+    {
+        "title": "CatBox-mobile",
+        "dates": 2014,
+        "description": "A serverless cross platform mobile application for cat adoption using flutter and cloud firestore and firebase functions. <a class='inline' href='https://github.com/obasekiosa/CatBox-Mobile'>REPO</a>.",
+        "images": ["images/nano-p3-1.png", "images/nano-p3-2.png"],
+        "url": "https://similarities-deploy.herokuapp.com/"
+    }
   ],
   display : function() {
     $("#projects").append(HTMLprojectStart);
