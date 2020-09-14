@@ -5,14 +5,14 @@ var work = {
     "location" : "Lagos, Nigeria",
     "pin" : "green",
     "dates" : "December 2019 - September 2020",
-    "description" : "Programmer and web developer, specializing in full stack web development of tools for use by internal AT&T customer support teams."
+    "description" : "Programmer web and android developer, specializing in full stack web development of tools for use by internal customer support teams."
   },{
     "employer": "Wireline Schlumberger",
     "title" : "Engineering Intern",
     "location" : "Port Harcourt, Nigeria",
     "pin" : "green",
     "dates" : "June 2018 - November 2018",
-    "description" : "Call center technician, specializing in customer support of DSL trouble calls. Also functioned as a team lead in support of other center technicians."
+    "description" : "Wireline technician, specializing in job support of Well logging equiment troubleshooting and manintenace. Also functioned as a team lead in support of other center technicians."
   },],
   display : function() {
     for (index in work.jobs){
