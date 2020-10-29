@@ -121,7 +121,7 @@ var bio = {
     "mobile" : "08162831365",
     "email" : "obasekiosa@gmail.com",
     "github" : "obasekiosa",
-    "blog" : "hill-nano",
+    "blog" : "None",
     "linkedin": "obasekiosa",
     "location" : "Lagos, Nigeria",
     "pin" : "red"
