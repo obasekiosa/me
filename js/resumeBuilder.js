@@ -35,31 +35,61 @@ var work = {
 };
 
 var projects = {
-  "projects" : [{
-      "title": "Online Movie Database System",
-    "dates" : 2020,
-      "description": "A distributed movie database system built using ReactJS, MongoDB and Flask framework. <a class='inline' href='https://github.com/obasekiosa/mflix-movies'>REPO</a>.",
-    "images": ["images/1st_column.jpg","images/1st_column_2.jpg"],
-      "url": "https://mflix-movies.herokuapp.com/"
+  "projects": [{
+    "title": "Online Movie Database System (WEB)",
+    "dates": 2020,
+    "description": "A distributed movie database system built using ReactJS, MongoDB and Flask framework. <a class='inline' href='https://github.com/obasekiosa/mflix-movies'>REPO</a>.",
+    "images": ["images/movie-database-system/movie-database-system-home.jpg", "images/movie-database-system/movie-database-system-search.jpg"],
+    "url": "https://mflix-movies.herokuapp.com/"
   },{
-          "title": "Quake Report",
+      "title": "tindog (WEB)",
+    "dates": 2020,
+    "description": "A Landing Page for a dog dating site. <a class='inline' href='https://github.com/obasekiosa/tindog'>REPO</a>.",
+    "images": ["images/tindog/tindog-title-web.jpg", "images/tindog/tindog-mobile.jpeg"],
+    "url": "https://obasekiosa.github.io/tindog"
+  },{
+      "title": "Simon Game (WEB)",
+    "dates": 2020,
+    "description": "A JavaScrip Implementaion of the simon game. <a class='inline' href='https://github.com/obasekiosa/simon-game'>REPO</a>.",
+    "images": ["images/simon-game/simon-game-web.jpg", "images/simon-game/simon-game-lv5-web.jpg"],
+      "url": "https://obasekiosa.github.io/simon-game"
+    }, {
+      "title": "Yollo (MOBILE)",
+      "dates": 2020,
+      "description": "A Social network front-end implemented in flutter. <a class='inline' href='https://github.com/obasekiosa/yollo'>REPO</a>.",
+      "images": ["images/yollo/yollo-home.jpeg"],
+      "url": "https://github.com/obasekiosa/yollo"
+    },{
+      "title": "Facebook Clone (MOBILE)",
+      "dates": 2020,
+      "description": "A cross-platform(web and mobile) responsive implementation of the facebook UI using flutter. <a class='inline' href='https://github.com/obasekiosa/facebook-clone'>REPO</a>.",
+      "images": ["images/facebook-clone/facebook-clone-home.jpeg"],
+      "url": "https://github.com/obasekiosa/facebook-clone"
+    }, {
+      "title": "Instagram Clone (MOBILE)",
+      "dates": 2020,
+      "description": "An Instagram clone using flutter, firebase cloud storage, authentication, cloud firestore and firebase functions. <a class='inline' href='https://github.com/obasekiosa/marketplace'>REPO</a>.",
+      "images": ["images/instagram-clone/instagram-clone-upload.jpeg"],
+      "url": "https://github.com/obasekiosa/marketplace"
+    },{
+      "title": "Quake Report (MOBILE)",
     "dates" : 2019,
           "description": "A real-time earthquake notifier using Android native, retrofit networking library and the USGS API. <a class='inline' href='https://github.com/obasekiosa/QuakeReport'>REPO</a>.",
-    "images": ["images/nano-p1-1.png","images/nano-p1-2.png"],
+      "images": ["images/quake-report/quake-report-home.jpg","images/quake-report/quake-report-full-info-page.jpg"],
     "url" : "https://sentry71.github.io/portfolio"
   },{
-          "title": "File Similarity Checker",
+      "title": "File Similarity Checker (WEB)",
     "dates" : 2014,
           "description": "A Text file similarity checker using, Flask, bootstrap and the Natural language processing library (nltk). <a class='inline' href='https://github.com/obasekiosa/similarities'>REPO</a>.",
-    "images": ["images/nano-p3-1.png","images/nano-p3-2.png"],
+      "images": ["images/file-similarity-checker/file-similarity-checker-home.jpg","images/file-similarity-checker/file-similarity-checker-substrings.jpg"],
           "url": "https://similarities-deploy.herokuapp.com/"
   },
     {
-        "title": "CatBox-mobile",
-        "dates": 2014,
+      "title": "CatBox-mobile (MOBILE)",
+        "dates": 2020,
         "description": "A serverless cross platform mobile application for cat adoption using flutter and cloud firestore and firebase functions. <a class='inline' href='https://github.com/obasekiosa/CatBox-Mobile'>REPO</a>.",
-        "images": ["images/nano-p3-1.png", "images/nano-p3-2.png"],
-        "url": "https://similarities-deploy.herokuapp.com/"
+      "images": ["images/catbox-mobile/catbox-mobile-home.png", "images/catbox-mobile/catbox-mobile-unlike.png"],
+      "url": "https://github.com/obasekiosa/CatBox-Mobile"
     }
   ],
   display : function() {
@@ -98,13 +128,14 @@ var bio = {
   },
     "skills": [
         "Programming Languages: Java, Python, Javascript, Dart",
-        "Front-end: HTML/CSS, Flutter, React", 
+        "Front-end: HTML/CSS, Bootstrap, Flutter, React", 
         "Back-end: Flask, Django, Express", 
         "Mobile: Android Native, Flutter", 
-        "Others: SQL, Algorithms and Data Structures, Ms Office", 
+        "Dev-Ops: GCP, Azure, Firebase",
+        "Others: SQL, MongoDB Algorithms and Data Structures, Ms Office", 
         "Languages: English"
     ],
-  "bioPic" : "images/gold_centurion_poster.jpg",
+  "bioPic": "images/obasekiosa.png",
   display : function() {
     formattedName = HTMLheaderName.replace("%data%",bio.name);
     formattedRole = HTMLheaderRole.replace("%data%",bio.role);
@@ -152,7 +183,7 @@ var education = {
     "location" : "Lagos, Nigeria",
     "degree" : "Bachelor of Science",
     "majors" : ["Electrical and Electronic Engineering"],
-    "dates" : "2014 - 2020",
+    "dates" : "2014 - 2020/21",
     "url" : "https://www.unilag.edu.ng",
     "pin" : "yellow"
   }],
