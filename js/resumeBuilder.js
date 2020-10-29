@@ -133,7 +133,8 @@ var bio = {
         "Mobile: Android Native, Flutter", 
         "Dev-Ops: GCP, Azure, Firebase",
         "Others: SQL, MongoDB Algorithms and Data Structures, Ms Office", 
-        "Languages: English"
+        "Languages: English",
+        "RESUME: <a style='display:inline;' href='https://docs.google.com/document/d/1Z64UqZfppDY6n5ODB1-G4vcRJOzjr8_mCEMtM8R4D28/edit?usp=sharing'>PDF</a>"
     ],
   "bioPic": "images/obasekiosa.png",
   display : function() {
